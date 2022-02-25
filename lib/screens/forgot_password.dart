@@ -1,6 +1,7 @@
+import 'dart:html';
 import 'package:flutter/material.dart';
-
 import 'package:musicapp2/screens/home.dart';
+import 'dart:ui';
 
 class ForgotPassword extends StatelessWidget {
   const ForgotPassword({Key? key}) : super(key: key);
@@ -24,6 +25,14 @@ class ForgotPassword extends StatelessWidget {
             ),
           ),
           Padding(
+              padding: EdgeInsets.fromLTRB(10, 20, 20, 20),
+              child: Text('Enter your email to reset password',
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue,
+                  ))),
+          Padding(
             padding: const EdgeInsets.only(
                 left: 15.0, right: 15.0, top: 0, bottom: 0),
             // padding: EdgeInsets.symmetric(horizontal: 15),
@@ -46,7 +55,7 @@ class ForgotPassword extends StatelessWidget {
                     context, MaterialPageRoute(builder: (_) => MyHomePage()));
               },
               child: Text(
-                'Go',
+                'Send',
                 style: TextStyle(color: Colors.white, fontSize: 25),
               ),
             ),
