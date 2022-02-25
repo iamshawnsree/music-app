@@ -1,16 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:musicapp2/screens/forgot_password.dart';
-import 'package:musicapp2/screens/home.dart';
-import 'package:musicapp2/screens/register.dart';
+import 'package:musicapp2/screens/login.dart';
 
-class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
+class Register extends StatelessWidget {
+  const Register({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('LOGIN PAGE')),
+        appBar: AppBar(title: Text('Create New Acoount')),
         body: SingleChildScrollView(
             child: Column(children: <Widget>[
           Padding(
@@ -22,12 +19,24 @@ class Login extends StatelessWidget {
                   /*decoration: BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(50.0)),*/
-                  child: Image.asset("img/music-logo-png-2343.png")),
+                  child: Image.asset("img/register-png-1.png")),
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(
-                left: 15.0, right: 15.0, top: 0, bottom: 0),
+                left: 15.0, right: 15.0, top: 15, bottom: 0),
+            //padding: EdgeInsets.symmetric(horizontal: 15),
+            child: TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Username',
+                  hintText: 'Enter Username'),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+                left: 15.0, right: 15.0, top: 15, bottom: 0),
             // padding: EdgeInsets.symmetric(horizontal: 15),
             child: TextField(
               decoration: InputDecoration(
@@ -48,18 +57,19 @@ class Login extends StatelessWidget {
                   hintText: 'Enter secure password'),
             ),
           ),
-          SizedBox(height: 10),
-          FlatButton(
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => ForgotPassword()));
-            },
-            child: Text(
-              'Forgot Password',
-              style: TextStyle(color: Colors.blue, fontSize: 15),
+          Padding(
+            padding: const EdgeInsets.only(
+                left: 15.0, right: 15.0, top: 15, bottom: 0),
+            //padding: EdgeInsets.symmetric(horizontal: 15),
+            child: TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Confirm Password',
+                  hintText: 'Enter same password'),
             ),
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 15),
           Container(
             height: 50,
             width: 250,
@@ -68,24 +78,21 @@ class Login extends StatelessWidget {
             child: FlatButton(
               onPressed: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => MyHomePage()));
+                    context, MaterialPageRoute(builder: (_) => Login()));
               },
               child: Text(
-                'Login',
+                'Sign Up',
                 style: TextStyle(color: Colors.white, fontSize: 25),
               ),
             ),
           ),
-          SizedBox(
-            height: 130,
-          ),
           FlatButton(
             onPressed: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => Register()));
+                  context, MaterialPageRoute(builder: (_) => Login()));
             },
             child: Text(
-              'New User? Create Account',
+              'Already have an account? Login',
               style: TextStyle(color: Colors.blue, fontSize: 15),
             ),
           ),
