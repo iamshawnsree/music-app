@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:musicapp2/colors/app_colors.dart' as AppColors;
 import 'package:musicapp2/my_tabs.dart';
 import 'package:musicapp2/my_tabs.dart';
+import 'package:musicapp2/screens/login.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -55,42 +56,44 @@ class _MyHomePageState extends State<MyHomePage>
       child: SafeArea(
         // ignore: prefer_const_constructors
         child: Scaffold(
+          appBar: AppBar(
+            title: const Text("Music App"),
+            toolbarHeight: 60.2,
+            elevation: 0.2,
+            actions: [
+              GestureDetector(
+                child: Icon(Icons.search),
+              ),
+              GestureDetector(
+                child: Icon(Icons.notifications_outlined),
+              ),
+              GestureDetector(
+                child: Icon(Icons.login),
+                onTap: () => {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      return Login();
+                    }),
+                  )
+                },
+              ),
+            ],
+          ),
           body: Column(
             children: [
               Container(
-                margin: const EdgeInsets.only(left: 10, right: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    ImageIcon(
-                      AssetImage("img/menu.png"),
-                      size: 20,
-                      color: Colors.black,
-                    ),
-                    Row(
-                      children: [
-                        Icon(Icons.search),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Icon(Icons.notifications),
-                      ],
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Row(
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(left: 10),
-                    child:
-                        Text("Popular Songs", style: TextStyle(fontSize: 30)),
-                  ),
-                ],
-              ),
+                  margin: const EdgeInsets.only(left: 10, right: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.only(left: 10),
+                        child: const Text("Popular Songs",
+                            style: TextStyle(fontSize: 30)),
+                      ),
+                    ],
+                  )),
               SizedBox(height: 10),
               Container(
                 height: 180,
