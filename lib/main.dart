@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:musicapp2/screens/Home.dart';
+import 'package:musicapp2/detailed_audio_page.dart';
+import 'package:musicapp2/screens/home.dart';
 
 void main() {
   runApp(MyApp());
