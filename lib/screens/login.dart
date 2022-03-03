@@ -25,6 +25,7 @@ class Login extends StatelessWidget {
                   child: Image.asset("img/music-logo-png-2343.png")),
             ),
           ),
+          
           Padding(
             padding: const EdgeInsets.only(
                 left: 15.0, right: 15.0, top: 0, bottom: 0),

@@ -1,8 +1,74 @@
+// ignore_for_file: prefer_const_constructors, deprecated_member_use
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:musicapp2/screens/login.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Register extends StatelessWidget {
-  const Register({Key? key}) : super(key: key);
+  Register({Key? key}) : super(key: key);
+  final username = TextEditingController();
+  final email = TextEditingController();
+  final password1 = TextEditingController();
+  final password2 = TextEditingController();
+
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  // set up the button
+  Widget okButton = TextButton(
+    child: Text("OK"),
+    onPressed: () {},
+  );
+
+  Future register(context) async {
+    if (password1.text != password2.text) {
+      Fluttertoast.showToast(
+          msg: "Passwords dont match !!!",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          fontSize: 16.0);
+      return;
+    }
+    try {
+      var user = await _auth.createUserWithEmailAndPassword(
+          email: email.text, password: password2.text);
+      Fluttertoast.showToast(
+          msg: "User Created Successfully... Please login!!!",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.green,
+          textColor: Colors.white,
+          fontSize: 16.0);
+      Navigator.push(context, MaterialPageRoute(builder: (_) => Login()));
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        print('The password provided is too weak.');
+      } else if (e.code == 'email-already-in-use') {
+        Fluttertoast.showToast(
+            msg: "The account already exists for that email.",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0);
+      }
+    } catch (e) {
+      print("EXCEPTION: $e");
+      Fluttertoast.showToast(
+          msg: "Error creating account, Please try again later",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          fontSize: 16.0);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,33 +88,45 @@ class Register extends StatelessWidget {
                   child: Image.asset("img/register-png-1.png")),
             ),
           ),
+          // ignore: prefer_const_constructors
           Padding(
             padding: const EdgeInsets.only(
                 left: 15.0, right: 15.0, top: 15, bottom: 0),
             //padding: EdgeInsets.symmetric(horizontal: 15),
-            child: TextField(
+            child: TextFormField(
+              controller: username,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter some text';
+                }
+                return null;
+              },
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Username',
-                  hintText: 'Enter Username'),
+                  hintText: 'Enter Username',
+                  errorText: "Username required"),
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(
                 left: 15.0, right: 15.0, top: 15, bottom: 0),
             // padding: EdgeInsets.symmetric(horizontal: 15),
-            child: TextField(
+            child: TextFormField(
+              controller: email,
               decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Email',
-                  hintText: 'Enter valid email id as abc@gmail.com'),
+                border: OutlineInputBorder(),
+                labelText: 'Email',
+                hintText: 'Enter valid email id as abc@gmail.com',
+              ),
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(
                 left: 15.0, right: 15.0, top: 15, bottom: 0),
             //padding: EdgeInsets.symmetric(horizontal: 15),
-            child: TextField(
+            child: TextFormField(
+              controller: password1,
               obscureText: true,
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
@@ -60,7 +138,8 @@ class Register extends StatelessWidget {
             padding: const EdgeInsets.only(
                 left: 15.0, right: 15.0, top: 15, bottom: 0),
             //padding: EdgeInsets.symmetric(horizontal: 15),
-            child: TextField(
+            child: TextFormField(
+              controller: password2,
               obscureText: true,
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
@@ -76,8 +155,7 @@ class Register extends StatelessWidget {
                 color: Colors.blue, borderRadius: BorderRadius.circular(20)),
             child: FlatButton(
               onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => Login()));
+                register(context);
               },
               child: Text(
                 'Sign Up',
