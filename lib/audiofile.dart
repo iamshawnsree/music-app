@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:musicapp2/api.dart';
 
 class AudioFile extends StatefulWidget {
   final AudioPlayer advancePlayer;
@@ -16,7 +17,7 @@ class _AudioFileState extends State<AudioFile> {
   Duration _duration = new Duration();
   Duration _position = new Duration();
   final String path =
-      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/39/0e/6e/390e6e21-1e46-5947-e4cf-ca51b5f8c826/mzaf_2025710706695030556.plus.aac.p.m4a";
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/91/0f/31/910f31e8-73bf-ac0f-77fb-1fc6dfe1e9d1/mzaf_7579223946405210914.plus.aac.p.m4a";
   bool isPlaying = false;
   bool isPaused = false;
   bool isRepeat = false;
