@@ -15,8 +15,8 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage>
-    with SingleTickerProviderStateMixin {
+class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin {
+  
   int _currentindex = 0;
   final tabs = [
     Center(child: Text('kljaf')),
@@ -59,7 +59,6 @@ class _MyHomePageState extends State<MyHomePage>
 
   @override
   Widget build(BuildContext context) {
-    print("from widget");
     // ignore: avoid_unnecessary_containers
     return Container(
       color: AppColors.background,
@@ -98,7 +97,6 @@ class _MyHomePageState extends State<MyHomePage>
                           child: const Text("Popular Songs",
                               style: TextStyle(fontSize: 30)),
                         ),
-<<<<<<< HEAD
                       ),
                     )
                   ];
@@ -210,7 +208,6 @@ class _MyHomePageState extends State<MyHomePage>
                                   ],
                                 ),
                               ),
-=======
                       ],
                     )),
                 SizedBox(height: 10),
@@ -287,7 +284,6 @@ class _MyHomePageState extends State<MyHomePage>
                                     color: AppColors.menu3Color,
                                     text: "Trending"),
                               ],
->>>>>>> 0bc6f4ac231f593c32f8f37040f26015f2c147c5
                             ),
                           ),
                         ),
@@ -409,7 +405,7 @@ class _MyHomePageState extends State<MyHomePage>
                         leading: CircleAvatar(
                           backgroundColor: Colors.grey,
                         ),
-                        title: Text("content  "),
+                        title: Text("content"),
                       ),
                     ),
                   ]),
@@ -417,6 +413,7 @@ class _MyHomePageState extends State<MyHomePage>
               ],
             ),
           ),
+          tabs[_currentIndex],
           bottomNavigationBar: BottomNavigationBar(
               currentIndex: _currentindex,
               type: BottomNavigationBarType.fixed,
