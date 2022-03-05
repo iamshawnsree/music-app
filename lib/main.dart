@@ -1,9 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 
 import 'package:musicapp2/detailed_audio_page.dart';
 import 'package:musicapp2/screens/home.dart';
+=======
+>>>>>>> 0bc6f4ac231f593c32f8f37040f26015f2c147c5
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:musicapp2/screens/Home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
