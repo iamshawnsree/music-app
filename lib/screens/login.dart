@@ -1,16 +1,69 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:musicapp2/screens/forgot_password.dart';
 import 'package:musicapp2/screens/home.dart';
 import 'package:musicapp2/screens/register.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
+  Login({Key? key}) : super(key: key);
+  final email = TextEditingController();
+  final password = TextEditingController();
+
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  Future login(context) async {
+    try {
+      var user = await _auth.signInWithEmailAndPassword(
+          email: email.text, password: password.text);
+      print('user : $user');
+      Fluttertoast.showToast(
+          msg: "WELCOME",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.blue,
+          textColor: Colors.white,
+          fontSize: 16.0);
+      Navigator.push(context, MaterialPageRoute(builder: (_) => MyHomePage()));
+    } on FirebaseAuthException catch (e) {
+      print('exception : $e');
+      if (e.code == 'wrong-password') {
+        Fluttertoast.showToast(
+            msg: "Enter valid password.",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0);
+      } else if (e.code == 'user-not-found') {
+        Fluttertoast.showToast(
+            msg: "Enter valid email.",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0);
+      } else {
+        Fluttertoast.showToast(
+            msg: "Error login, Please try again later",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0);
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('LOGIN PAGE')),
+        appBar: AppBar(title: Text('Login your account')),
         body: SingleChildScrollView(
             child: Column(children: <Widget>[
           Padding(
@@ -30,6 +83,7 @@ class Login extends StatelessWidget {
                 left: 15.0, right: 15.0, top: 0, bottom: 0),
             // padding: EdgeInsets.symmetric(horizontal: 15),
             child: TextField(
+              controller: email,
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Email',
@@ -41,6 +95,7 @@ class Login extends StatelessWidget {
                 left: 15.0, right: 15.0, top: 15, bottom: 0),
             //padding: EdgeInsets.symmetric(horizontal: 15),
             child: TextField(
+              controller: password,
               obscureText: true,
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
@@ -67,8 +122,7 @@ class Login extends StatelessWidget {
                 color: Colors.blue, borderRadius: BorderRadius.circular(20)),
             child: FlatButton(
               onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => MyHomePage()));
+                login(context);
               },
               child: Text(
                 'Login',

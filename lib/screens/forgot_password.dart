@@ -1,10 +1,34 @@
-import 'dart:html';
+// ignore_for_file: prefer_const_constructors
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:musicapp2/screens/home.dart';
-import 'dart:ui';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class ForgotPassword extends StatelessWidget {
-  const ForgotPassword({Key? key}) : super(key: key);
+  ForgotPassword({Key? key}) : super(key: key);
+  final email = TextEditingController();
+  void sendPWResetEmail(String email) async {
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+      Fluttertoast.showToast(
+          msg: "Email is sent successfully, Please check email",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.green,
+          textColor: Colors.white,
+          fontSize: 16.0);
+    } on FirebaseAuthException catch (e) {
+      Fluttertoast.showToast(
+          msg: "Failed to send email, Email does not exists!!",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          fontSize: 16.0);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +61,7 @@ class ForgotPassword extends StatelessWidget {
                 left: 15.0, right: 15.0, top: 0, bottom: 0),
             // padding: EdgeInsets.symmetric(horizontal: 15),
             child: TextField(
+              controller: email,
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Email',
@@ -51,8 +76,7 @@ class ForgotPassword extends StatelessWidget {
                 color: Colors.blue, borderRadius: BorderRadius.circular(20)),
             child: FlatButton(
               onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => MyHomePage()));
+                sendPWResetEmail(email.text);
               },
               child: Text(
                 'Send',
