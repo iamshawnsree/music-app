@@ -1,10 +1,8 @@
 import 'dart:convert';
-import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:musicapp2/colors/app_colors.dart' as AppColors;
 import 'package:musicapp2/detailed_audio_page.dart';
-import 'package:musicapp2/my_tabs.dart';
 import 'package:musicapp2/my_tabs.dart';
 import 'package:musicapp2/screens/login.dart';
 
@@ -17,8 +15,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
-  late List popularMusic;
-  late List ListViewMusic;
+  late List popularMusic = [];
+  late List ListViewMusic = [];
 
   late ScrollController _scrollController;
   late TabController _tabController;

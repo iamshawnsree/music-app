@@ -1,8 +1,23 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+
 import 'package:musicapp2/detailed_audio_page.dart';
 import 'package:musicapp2/screens/home.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: 'AIzaSyA0XAJHqbcfg0H3un6qUsf8cbMnVULuGyU',
+      appId: '1:855528724979:android:d4a96f91fd73e16dc25a86',
+      messagingSenderId: '855528724979',
+      projectId: 'music-app-24f56',
+      authDomain: 'music-app-24f56.firebaseapp.com',
+      // databaseURL: 'https://react-native-firebase-testing.firebaseio.com',
+      // storageBucket: 'react-native-firebase-testing.appspot.com',
+    ),
+  );
   runApp(MyApp());
 }
 
