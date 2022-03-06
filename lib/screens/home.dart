@@ -3,6 +3,7 @@ import 'package:musicapp2/colors/app_colors.dart' as AppColors;
 import 'package:musicapp2/components/home_screen.dart';
 import 'package:musicapp2/screens/login.dart';
 import 'package:musicapp2/screens/playlist.dart';
+import 'package:musicapp2/screens/profile.dart';
 import 'package:musicapp2/screens/search.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -18,7 +19,7 @@ class _MyHomePageState extends State<MyHomePage> {
   List<dynamic> tabs = [
     const HomeScreen(),
     const Search(),
-    Login(),
+    const Profile(),
     const Playlist()
   ];
 

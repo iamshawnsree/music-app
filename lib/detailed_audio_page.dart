@@ -3,6 +3,7 @@ import 'package:musicapp2/colors/app_colors.dart' as AppColors;
 import 'package:audioplayers/audioplayers.dart';
 import 'package:musicapp2/audiofile.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:musicapp2/components/home_screen.dart';
 
 class DetailedAudioPage extends StatefulWidget {
   const DetailedAudioPage({Key? key}) : super(key: key);
@@ -45,7 +46,10 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
                   icon: Icon(
                     Icons.arrow_back_ios,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                  },
                 ),
                 actions: [
                   IconButton(

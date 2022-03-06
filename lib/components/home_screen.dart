@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:musicapp2/detailed_audio_page.dart';
 import 'package:musicapp2/my_tabs.dart';
 
 import 'package:flutter/material.dart';
@@ -185,84 +186,94 @@ class _HomeScreenState extends State<HomeScreen>
                                       color: Colors.grey.withOpacity(0.2),
                                     )
                                   ]),
-                              child: Container(
-                                padding: const EdgeInsets.all(8),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      height: 120,
-                                      width: 90,
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          image: DecorationImage(
-                                            image: NetworkImage(
-                                                ListViewMusic[index]
-                                                    ["posters"]),
-                                          )),
-                                    ),
-                                    SizedBox(
-                                      width: 10,
-                                    ),
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Icon(Icons.star_border_purple500,
-                                                size: 20,
-                                                color: AppColors.starColor),
-                                            SizedBox(
-                                              width: 8,
-                                            ),
-                                            Text(
-                                              ListViewMusic[index]["raitings"],
-                                              style: TextStyle(
-                                                color: AppColors.menu2Color,
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                        Text(
-                                          ListViewMusic[index]["songname"],
-                                          style: TextStyle(
-                                            fontSize: 16,
-                                            fontFamily: "Avenir",
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                        Text(
-                                          ListViewMusic[index]["artistname"],
-                                          style: TextStyle(
-                                            fontSize: 13,
-                                            fontFamily: "Avenir",
-                                            fontWeight: FontWeight.normal,
-                                            color: AppColors.subTitleText,
-                                          ),
-                                        ),
-                                        Container(
-                                          width: 80,
-                                          height: 20,
-                                          decoration: BoxDecoration(
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              DetailedAudioPage()));
+                                },
+                                child: Container(
+                                  padding: const EdgeInsets.all(8),
+                                  child: Row(
+                                    children: [
+                                      Container(
+                                        height: 120,
+                                        width: 90,
+                                        decoration: BoxDecoration(
                                             borderRadius:
-                                                BorderRadius.circular(3),
-                                            color: AppColors.loveColor,
+                                                BorderRadius.circular(10),
+                                            image: DecorationImage(
+                                              image: NetworkImage(
+                                                  ListViewMusic[index]
+                                                      ["posters"]),
+                                            )),
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Icon(Icons.star_border_purple500,
+                                                  size: 20,
+                                                  color: AppColors.starColor),
+                                              SizedBox(
+                                                width: 8,
+                                              ),
+                                              Text(
+                                                ListViewMusic[index]
+                                                    ["raitings"],
+                                                style: TextStyle(
+                                                  color: AppColors.menu2Color,
+                                                ),
+                                              )
+                                            ],
                                           ),
-                                          child: Text(
-                                            "Favourites",
+                                          Text(
+                                            ListViewMusic[index]["songname"],
                                             style: TextStyle(
-                                              fontSize: 12,
+                                              fontSize: 16,
                                               fontFamily: "Avenir",
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.white,
                                             ),
                                           ),
-                                          alignment: Alignment.center,
-                                        )
-                                      ],
-                                    )
-                                  ],
+                                          Text(
+                                            ListViewMusic[index]["artistname"],
+                                            style: TextStyle(
+                                              fontSize: 13,
+                                              fontFamily: "Avenir",
+                                              fontWeight: FontWeight.normal,
+                                              color: AppColors.subTitleText,
+                                            ),
+                                          ),
+                                          Container(
+                                            width: 80,
+                                            height: 20,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(3),
+                                              color: AppColors.loveColor,
+                                            ),
+                                            child: Text(
+                                              "Favourites",
+                                              style: TextStyle(
+                                                fontSize: 12,
+                                                fontFamily: "Avenir",
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                            alignment: Alignment.center,
+                                          )
+                                        ],
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
