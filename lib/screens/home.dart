@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:musicapp2/colors/app_colors.dart' as AppColors;
-import 'package:musicapp2/screens/home_screen.dart';
+import 'package:musicapp2/components/home_screen.dart';
 import 'package:musicapp2/screens/login.dart';
 import 'package:musicapp2/screens/playlist.dart';
 import 'package:musicapp2/screens/search.dart';
