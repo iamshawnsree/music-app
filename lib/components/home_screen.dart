@@ -5,6 +5,7 @@ import 'package:musicapp2/my_tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:musicapp2/colors/app_colors.dart' as AppColors;
 import 'package:musicapp2/screens/login.dart';
+import 'package:musicapp2/screens/search.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -15,6 +16,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
+  Icon customIcon = const Icon(Icons.search);
+
   late List popularMusic = [];
   late List ListViewMusic = [];
 
@@ -60,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen>
             elevation: 0.2,
             actions: [
               GestureDetector(
-                child: Icon(Icons.login),
+                child: Icon(Icons.account_box_rounded),
                 onTap: () => {
                   Navigator.push(
                     context,
