@@ -1,222 +1,173 @@
 [
   {
-    "artistname":"ALBATROSS",
-    "songname":"NISCHAL",
-    "duration":"4:03",
-    "raitings":"4.1",
-    "posters":"http://m.gettywallpapers.com/wp-content/uploads/2020/04/Taylor-Swift-Wallpaper.jpg"
-
-  },
-  {
-    "artistname":"The Elements",
-    "songname":"Sapana Ko Mayalu ",
-    "duration":"4:20",
-    "raitings":"4.3",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
-  },
-
-  {
-    "artistname":"Sabin Rai",
-    "songname":"Timi Nai Hau",
-    "duration":"3:15",
-    "raitings":"4.5",
-    "posters":"http://m.gettywallpapers.com/wp-content/uploads/2020/04/Taylor-Swift-Wallpaper.jpg" 
-  },
-  {
-    "artistname":"Albatross",
-    "songname":"Timi Bhane",
-    "duration":"5:28",
-    "raitings":"4.5",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
-  },
-  {
     "artistname":"Passenger",
     "songname":"Let Her Go",
     "duration":"4:12",
-    "raitings":"3.5",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
+    "raitings":"4.1",
+    "image":"https://en.wikipedia.org/wiki/Passenger_(singer)#/media/File:Passenger-1983.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/e7/6f/d5/e76fd5bb-0279-08aa-8efa-292c1a893e29/mzaf_5932096121717463641.plus.aac.p.m4a"
   },
   {
-    "artistname":"Eagles",
+   "artistname":"James Arthur",
+    "songname":"Say You Won't Let Go",
+    "duration":"330",
+    "raitings":"4.1",
+    "image":"https://en.wikipedia.org/wiki/James_Arthur#/media/File:James_arthur_NRJ_Music_awards_2014.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/ec/72/1f/ec721f9a-cdbc-4907-28b0-9645aa1ecd04/mzaf_7754368333708597271.plus.aac.p.m4a"
+  },
+  {
+    "artistname":"Bruno Mars",
+    "songname":"Just The Way You Are",
+    "duration":"3:56",
+    "raitings":"4.1",
+    "image":"https://en.wikipedia.org/wiki/Bruno_Mars#/media/File:BrunoMars24KMagicWorldTourLive_(cropped).jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/0c/9d/26/0c9d266f-632d-dbda-770d-55cdded795f8/mzaf_18078867637438469059.plus.aac.p.m4a" 
+  },
+  
+  {
+     "artistname":"Eagles",
     "songname":"Hotel California",
     "duration":"6:30",
-    "raitings":"4.5",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
+    "raitings":"4.1",
+    "image":"https://en.wikipedia.org/wiki/Hotel_California_(Eagles_album)#/media/File:Hotelcalifornia.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/a7/1b/f0/a71bf07d-f498-05c9-2c8a-d12af7d019d8/mzaf_11402952498213508559.plus.aac.p.m4a" 
   },
   {
-    "artistname":"Sticky Fingers",
-    "songname":"Cyclone(The Village Sessions",
-    "duration":"4:36",
-    "raitings":"3.5",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
-  },
-  {
-    "artistname":"Rajesh Nepali",
-    "songname":"Blue",
-    "duration":"4:09",
-    "raitings":"4.5",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
+    "artistname":"The Beatles",
+    "songname":"Don't Let Me Down",
+    "duration":"3:31",
+    "raitings":"4.1",
+    "image":"https://en.wikipedia.org/wiki/The_Beatles#/media/File:The_Fabs.JPG",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/a6/ca/12/a6ca1264-0a19-167a-81ff-6835a560a0f4/mzaf_15310684184989466116.plus.aac.p.m4a"
   },
   {
     "artistname":"Eric Clapton",
     "songname":"Layla",
     "duration":"6:29",
-    "raitings":"3.5",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
+    "raitings":"4.1",
+    "image":"https://en.wikipedia.org/wiki/Eric_Clapton#/media/File:Eric_Clapton_-_Royal_Albert_Hall_-_Wednesday_24th_May_2017_EricClaptonRAH240517-30_(34987232355)_(cropped).jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/c4/a4/3d/c4a43d32-6eab-d22a-5867-4e5cdc843cad/mzaf_4355607378925269970.plus.aac.p.m4a" 
   },
   {
-    "artistname":"JPTRockerz",
-    "songname":"Basanta",
-    "duration":"2:49",
-    "raitings":"3.5",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
+    "artistname":"The Beatles",
+    "songname":"Hey Jude",
+    "duration":"8:09",
+    "raitings":"4.1",
+    "image":"https://en.wikipedia.org/wiki/The_Beatles#/media/File:The_Fabs.JPG",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/12/39/52/1239520e-a06f-7c43-4593-45ce38d19175/mzaf_15032527333822393196.plus.aac.p.m4a" 
   },
   {
-    "artistname":"Nepathya",
-    "songname":"Resham",
-    "duration":"4:27",
-    "raitings":"3.5",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
-  },
-  {
-    "artistname":"Karma Band",
-    "songname":"Hukka Mero",
-    "duration":"8:28",
-    "raitings":"3.5",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png"  
+    "artistname":"James Arthur",
+    "songname":" Falling Like The Stars",
+    "duration":"4:5",
+    "raitings":"4.1",
+    "image":"https://en.wikipedia.org/wiki/James_Arthur#/media/File:James_arthur_NRJ_Music_awards_2014.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/c1/37/10/c137101f-2c56-9b22-fbcb-81063cdb5321/mzaf_1478538002088800447.plus.aac.p.m4a"
   },
   {
     "artistname":"Deep Shrestha",
-    "songname":"Kati Kamjor Rahecha Bhagya",
+    "songname":"Badal Haru",
     "duration":"3:41",
-    "raitings":"4.6",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
+    "raitings":"4.1",
+    "image":"https://en.wikipedia.org/wiki/Deep_Shrestha#/media/File:Deep_Shrestha_Singer_%E0%A4%A6%E0%A5%80%E0%A4%AA_%E0%A4%B6%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%B7%E0%A5%8D%E0%A4%A0.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/45/fd/8d/45fd8dca-65f9-18c3-c488-cad61177d5b6/mzaf_8145645281183267282.plus.aac.p.m4a" 
   },
   {
     "artistname":"Sajjan Raj Vaidya",
     "songname":"Naganya Maya",
     "duration":"5:20",
-    "raitings":"4.6",
-   "posters":"https://wallpapercave.com/wp/eMWilML.png" 
+    "raitings":"4.1",
+   "image":"https://en.wikipedia.org/wiki/Sajjan_Raj_Vaidya#/media/File:Sajjan_Raj_Vaidya_Live_in_New_York_City_01.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/8c/a1/0d/8ca10dde-01c1-5ca0-b3c2-246daacc62f4/mzaf_15651121630370104766.plus.aac.p.m4a"
   },
   {
     "artistname":"Kailash Kher",
     "songname":"Saiyyan",
     "duration":"5:09",
-    "raitings":"4.5",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
+    "raitings":"4.1",
+    "image":"https://en.wikipedia.org/wiki/Kailash_Kher#/media/File:Kailash_Kher_1Madan300.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/95/df/9f/95df9f9a-f238-d0c6-fc3b-772a6bc42684/mzaf_5779307221856579597.plus.aac.p.m4a"
   },
-  {
-    "artistname":"Amit & Kiran",
-    "songname":"Bagaichama Najau Timi",
-    "duration":"2:11",
-    "raitings":"4.5",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
-  },
-  {
-    "artistname":"Arthur Gunn",
-    "songname":"Jalai Mai",
-    "duration":"3:20",
-    "raitings":"3.5",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
-  },
-  {
-    "artistname":"5:55",
-    "songname":"Maya",
-    "duration":"3:15",
-    "raitings":"4.6",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
-  },
-  {
-    "artistname":"Sushant Kc",
-    "songname":"Risaune Bhaye",
-    "duration":"3:19",
-    "raitings":"3.5",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
-  },
-  {
-    "artistname":"Ali Gate",
-    "songname":"It's You",
-    "duration":"3:32",
-    "raitings":"4.6",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
-  },
-  {
-    "artistname":"James Arthur",
-    "songname":"Say You Won't Let Go",
-    "duration":"3:30",
-    "raitings":"3.5",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
-  },
+  
   {
     "artistname":"Calum Scott",
     "songname":"You Are The Reason",
     "duration":"3:24",
-    "raitings":"4.6",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
+    "raitings":"4.1",
+    "image":"https://en.wikipedia.org/wiki/Calum_Scott#/media/File:2018-05-21_Calum_Scott-9258_(cropped).jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/94/7f/c1/947fc132-7f37-57d1-3b5f-7ccfe0720166/mzaf_10098171747568039089.plus.aac.p.m4a" 
   },
   {
     "artistname":"Ed Sheeran",
     "songname":"Perfect",
     "duration":"4:39",
-    "raitings":"4.5",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
+    "raitings":"4.1",
+    "image":"https://en.wikipedia.org/wiki/Ed_Sheeran#/media/File:Ed_Sheeran-6886_(cropped).jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/59/31/91/5931919c-9328-3f1a-007c-4679799bfdb9/mzaf_9373761365529925269.plus.aac.p.m4a" 
   },
   {
     "artistname":"James Blunt",
     "songname":"You're Beautiful",
     "duration":"3:22",
-    "raitings":"4.5",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
+    "raitings":"4.1",
+    "image":"https://en.wikipedia.org/wiki/James_Blunt#/media/File:James_Blunt_Tom_Brasil_(25624592027).jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/53/2e/bf/532ebf38-dd5c-636a-c92e-07612f82d07d/mzaf_3284361177825243645.plus.aac.p.m4a" 
   },
   {
     "artistname":"Hoobastank",
     "songname":"The Reason",
     "duration":"4:10",
-    "raitings":"4.5",
-     "posters":"https://wallpapercave.com/wp/eMWilML.png" 
+    "raitings":"4.1",
+     "image":"https://en.wikipedia.org/wiki/Hoobastank#/media/File:Hoobastank_MAA.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/1d/73/10/1d731020-70e8-8a3e-0007-d9f7fc451eba/mzaf_9873262183486304217.plus.aac.p.m4a" 
   },
   {
     "artistname":"Post Malone, Swae Lee",
     "songname":"Sunflower",
     "duration":"2:41",
-    "raitings":"4.3",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
+    "raitings":"4.1",
+    "image":"https://en.wikipedia.org/wiki/Post_Malone#/media/File:Post_Malone_Stavernfestivalen_2018_(202128).jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/9e/d2/57/9ed257de-b86b-45d3-1f50-349fdedf40c8/mzaf_3401877161381844275.plus.aac.p.m4a" 
   },
   {
     "artistname":"Powfu",
     "songname":"death bed",
     "duration":"2:53",
-    "raitings":"4.0",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
+    "raitings":"4.1",
+    "image":"https://en.wikipedia.org/wiki/Powfu#/media/File:Powfu.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e9/4a/29/e94a295b-d16f-39b9-7d67-c0f075fead51/mzaf_14853064860961301572.plus.aac.p.m4a"
   },
   {
-    "artistname":"Jeremy Zucker",
+     "artistname":"Jeremy Zucker",
     "songname":"Comethru",
     "duration":"3:00",
     "raitings":"4.1",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png" 
+    "image":"https://en.wikipedia.org/wiki/Jeremy_Zucker#/media/File:Jeremy_Zucker_Supercuts.png",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/a2/e5/9a/a2e59a2e-d485-2c2b-a968-baa81f61c508/mzaf_5630330414784457112.plus.aac.p.m4a" 
   },
   {
     "artistname":"Bruno Mars",
     "songname":"The Lazy Song",
     "duration":"3:19",
-    "raitings":"4.5",
-     "posters":"https://wallpapercave.com/wp/eMWilML.png" 
+    "raitings":"4.1",
+    "image":"https://en.wikipedia.org/wiki/Bruno_Mars#/media/File:BrunoMars24KMagicWorldTourLive_(cropped).jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/fc/97/06/fc970689-4bae-9bbb-32a7-3b91a8bdb896/mzaf_7145624423213884384.plus.aac.p.m4a" 
   },
   {
     "artistname":"Wiz Khalifia ft. Charlie Puth",
     "songname":"See You Again",
     "duration":"3:57",
-    "raitings":"4.2",
-     "posters":"https://wallpapercave.com/wp/eMWilML.png" 
+    "raitings":"4.1",
+     "image":"https://en.wikipedia.org/wiki/Wiz_Khalifa#/media/File:Wiz_Khalifa_Stavernfestivalen_2018_(231822).jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ae/cd/98/aecd98b8-3149-7125-0f3b-d5d3565024ee/mzaf_3586092188460258172.plus.aac.p.m4a" 
   },
   {
     "artistname":"Israel Kamakawiwoʻole",
     "songname":"Somewhere Over The Rainbow",
     "duration":"3:47",
-    "raitings":"4.3",
-    "posters":"https://wallpapercave.com/wp/eMWilML.png"
+    "raitings":"4.1",
+    "image":"https://en.wikipedia.org/wiki/Israel_Kamakawiwo%CA%BBole#/media/File:Israel_Kamakawiwo%CA%BBole.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/92/87/a8/9287a838-c8f6-51bc-2e7f-c39a0dd32feb/mzaf_6037630289299176882.plus.aac.p.m4a"
   }
-
-]
+ 
+ ]

@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen>
             // ignore: prefer_const_constructors
             child: Scaffold(
           appBar: AppBar(
-            title: const Text("Music App"),
+            title: const Text("Music Streaming"),
             toolbarHeight: 60.2,
             elevation: 0.2,
             actions: [
@@ -195,7 +195,10 @@ class _HomeScreenState extends State<HomeScreen>
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              DetailedAudioPage()));
+                                              DetailedAudioPage(
+                                                musicData: ListViewMusic,
+                                                index: index,
+                                              )));
                                 },
                                 child: Container(
                                   padding: const EdgeInsets.all(8),
@@ -210,7 +213,7 @@ class _HomeScreenState extends State<HomeScreen>
                                             image: DecorationImage(
                                               image: NetworkImage(
                                                   ListViewMusic[index]
-                                                      ["posters"]),
+                                                      ["image"]),
                                             )),
                                       ),
                                       SizedBox(

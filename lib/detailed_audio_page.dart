@@ -6,7 +6,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:musicapp2/components/home_screen.dart';
 
 class DetailedAudioPage extends StatefulWidget {
-  const DetailedAudioPage({Key? key}) : super(key: key);
+  final musicData;
+  final int index;
+  const DetailedAudioPage({Key? key, this.musicData, required this.index})
+      : super(key: key);
 
   @override
   _DetailedAudioPageState createState() => _DetailedAudioPageState();
@@ -47,6 +50,7 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
                     Icons.arrow_back_ios,
                   ),
                   onPressed: () {
+                    advancePlayer.stop();
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => HomeScreen()));
                   },
@@ -76,20 +80,23 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
                       height: screenHeight * 0.1,
                     ),
                     Text(
-                      "We are the champions",
+                      this.widget.musicData[this.widget.index]["songname"],
                       style: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
                           fontFamily: "Avenir"),
                     ),
                     Text(
-                      "Queen",
+                      this.widget.musicData[this.widget.index]["artistname"],
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                    AudioFile(advancePlayer: advancePlayer),
+                    AudioFile(
+                        advancePlayer: advancePlayer,
+                        audioPath: this.widget.musicData[this.widget.index]
+                            ["songurl"]),
                   ],
                 ),
               )),

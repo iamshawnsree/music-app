@@ -75,7 +75,7 @@ class Login extends StatelessWidget {
                   /*decoration: BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(50.0)),*/
-                  child: Image.asset("img/music-logo-png-2343.png")),
+                  child: Image.asset("img/images.png")),
             ),
           ),
           Padding(

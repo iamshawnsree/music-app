@@ -5,9 +5,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:musicapp2/api.dart';
 
 class AudioFile extends StatefulWidget {
+  const AudioFile(
+      {Key? key, required this.advancePlayer, required this.audioPath})
+      : super(key: key);
   final AudioPlayer advancePlayer;
-
-  const AudioFile({Key? key, required this.advancePlayer}) : super(key: key);
+  final String audioPath;
 
   @override
   _AudioFileState createState() => _AudioFileState();
@@ -16,8 +18,6 @@ class AudioFile extends StatefulWidget {
 class _AudioFileState extends State<AudioFile> {
   Duration _duration = new Duration();
   Duration _position = new Duration();
-  final String path =
-      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/91/0f/31/910f31e8-73bf-ac0f-77fb-1fc6dfe1e9d1/mzaf_7579223946405210914.plus.aac.p.m4a";
   bool isPlaying = false;
   bool isPaused = false;
   bool isRepeat = false;
@@ -43,16 +43,16 @@ class _AudioFileState extends State<AudioFile> {
       });
     });
 
-    widget.advancePlayer.setUrl(path);
+    widget.advancePlayer.setUrl(this.widget.audioPath);
 
     this.widget.advancePlayer.onPlayerCompletion.listen((event) {
       setState(() {
         _position = Duration(seconds: 0);
         if (isRepeat == true) {
-          isPlaying == true;
+          isPlaying = true;
         } else {
-          isPlaying == false;
-          isRepeat == false;
+          isPlaying = false;
+          isRepeat = false;
         }
       });
     });
@@ -75,14 +75,14 @@ class _AudioFileState extends State<AudioFile> {
             ),
       onPressed: () {
         if (isPlaying == false) {
-          this.widget.advancePlayer.play(path);
+          this.widget.advancePlayer.play(this.widget.audioPath);
           setState(() {
             isPlaying = true;
           });
         } else if (isPlaying == true) {
           this.widget.advancePlayer.pause();
           setState(() {
-            isPlaying == false;
+            isPlaying = false;
           });
         }
       },

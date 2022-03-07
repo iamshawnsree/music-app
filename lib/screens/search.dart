@@ -15,7 +15,7 @@ class _SearchState extends State<Search> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Search your music !!'),
+        title: Text('Music Streaming'),
       ),
       body: Container(
         margin: EdgeInsets.only(top: 10),
