@@ -58,7 +58,7 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
                 actions: [
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.search),
+                    icon: Icon(Icons.mic_outlined),
                   ),
                 ],
                 backgroundColor: Colors.transparent,

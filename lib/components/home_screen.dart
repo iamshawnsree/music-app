@@ -112,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   return Container(
                                     height: 150,
                                     width: MediaQuery.of(context).size.width,
-                                    margin: const EdgeInsets.only(right: 10),
+                                    margin: const EdgeInsets.only(right: 20),
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(15),
                                         image: DecorationImage(
@@ -205,15 +205,16 @@ class _HomeScreenState extends State<HomeScreen>
                                   child: Row(
                                     children: [
                                       Container(
-                                        height: 120,
+                                        height: 100,
                                         width: 90,
                                         decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(10),
                                             image: DecorationImage(
                                               image: NetworkImage(
-                                                  ListViewMusic[index]
-                                                      ["image"]),
+                                                ListViewMusic[index]["image"],
+                                              ),
+                                              fit: BoxFit.fill,
                                             )),
                                       ),
                                       SizedBox(
