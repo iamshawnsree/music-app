@@ -1,7 +1,16 @@
-import 'package:flutter/cupertino.dart';
+import 'package:animated_theme_switcher/animated_theme_switcher.dart';
+import 'package:flutter/material.dart';
+import 'package:musicapp2/button_widget.dart';
 import 'package:musicapp2/user.dart';
+import 'package:musicapp2/user_preferences.dart';
 
-lass Profile extends StatefulWidget {
+import '../appbar_widget.dart';
+import '../edit_profile_page.dart';
+import '../profile_widget.dart';
+
+class Profile extends StatefulWidget {
+  const Profile({Key? key}) : super(key: key);
+
   @override
   _ProfileState createState() => _ProfileState();
 }
@@ -9,14 +18,14 @@ lass Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
-    final user = UserPreferences.myUser;
+    const user = UserPreferences.myUser;
 
     return ThemeSwitchingArea(
       child: Builder(
         builder: (context) => Scaffold(
           appBar: buildAppBar(context),
           body: ListView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             children: [
               ProfileWidget(
                 imagePath: user.imagePath,
