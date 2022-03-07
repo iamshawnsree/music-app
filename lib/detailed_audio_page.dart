@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:musicapp2/colors/app_colors.dart' as AppColors;
 import 'package:audioplayers/audioplayers.dart';
 import 'package:musicapp2/audiofile.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:musicapp2/components/home_screen.dart';
+import 'package:musicapp2/screens/home.dart';
 
 class DetailedAudioPage extends StatefulWidget {
   final musicData;
@@ -51,8 +50,10 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
                   ),
                   onPressed: () {
                     advancePlayer.stop();
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MyHomePage()));
                   },
                 ),
                 actions: [
