@@ -1,4 +1,3 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:musicapp2/button_widget.dart';
 import 'package:musicapp2/user.dart';
@@ -19,32 +18,31 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     const user = UserPreferences.myUser;
+    String name = user.name;
+    print('user name : $name');
+    print("user:::: $user");
 
-    return ThemeSwitchingArea(
-      child: Builder(
-        builder: (context) => Scaffold(
-          appBar: buildAppBar(context),
-          body: ListView(
-            physics: const BouncingScrollPhysics(),
-            children: [
-              ProfileWidget(
-                imagePath: user.imagePath,
-                onClicked: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => EditProfilePage()),
-                  );
-                },
-              ),
-              const SizedBox(height: 24),
-              buildName(user),
-              const SizedBox(height: 24),
-              Center(child: buildUpgradeButton()),
-              const SizedBox(height: 24),
-              const SizedBox(height: 48),
-              buildAbout(user),
-            ],
+    return Scaffold(
+      appBar: buildAppBar(context),
+      body: ListView(
+        physics: const BouncingScrollPhysics(),
+        children: [
+          ProfileWidget(
+            imagePath: user.imagePath,
+            onClicked: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => EditProfilePage()),
+              );
+            },
           ),
-        ),
+          const SizedBox(height: 24),
+          buildName(user),
+          const SizedBox(height: 24),
+          Center(child: buildUpgradeButton()),
+          const SizedBox(height: 24),
+          const SizedBox(height: 48),
+          buildAbout(user),
+        ],
       ),
     );
   }
@@ -69,11 +67,11 @@ class _ProfileState extends State<Profile> {
       );
 
   Widget buildAbout(User user) => Container(
-        padding: EdgeInsets.symmetric(horizontal: 48),
+        padding: const EdgeInsets.symmetric(horizontal: 48),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'About',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),

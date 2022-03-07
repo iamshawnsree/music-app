@@ -17,7 +17,6 @@ class Login extends StatelessWidget {
     try {
       var user = await _auth.signInWithEmailAndPassword(
           email: email.text, password: password.text);
-      print('user : $user');
       Fluttertoast.showToast(
           msg: "WELCOME",
           toastLength: Toast.LENGTH_SHORT,
