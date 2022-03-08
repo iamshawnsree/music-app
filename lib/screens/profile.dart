@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:musicapp2/button_widget.dart';
-import 'package:musicapp2/user.dart';
-import 'package:musicapp2/user_preferences.dart';
-
-import '../appbar_widget.dart';
-import '../edit_profile_page.dart';
-import '../profile_widget.dart';
+import 'package:animated_theme_switcher/animated_theme_switcher.dart';
+import 'package:musicapp2/utils/user_preferences.dart';
+import 'package:musicapp2/screens/edit_profile_page.dart';
+import 'package:musicapp2/model/user.dart';
+import 'package:musicapp2/widget/appbar_widget.dart';
+import 'package:musicapp2/widget/button_widget.dart';
+import 'package:musicapp2/widget/profile_widget.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -18,31 +18,32 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     const user = UserPreferences.myUser;
-    String name = user.name;
-    print('user name : $name');
-    print("user:::: $user");
 
-    return Scaffold(
-      appBar: buildAppBar(context),
-      body: ListView(
-        physics: const BouncingScrollPhysics(),
-        children: [
-          ProfileWidget(
-            imagePath: user.imagePath,
-            onClicked: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => EditProfilePage()),
-              );
-            },
+    return ThemeSwitchingArea(
+      child: Builder(
+        builder: (context) => Scaffold(
+          appBar: buildAppBar(context),
+          body: ListView(
+            physics: const BouncingScrollPhysics(),
+            children: [
+              ProfileWidget(
+                imagePath: user.imagePath,
+                onClicked: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => EditProfilePage()),
+                  );
+                },
+              ),
+              const SizedBox(height: 24),
+              buildName(user),
+              const SizedBox(height: 24),
+              Center(child: buildUpgradeButton()),
+              const SizedBox(height: 24),
+              const SizedBox(height: 48),
+              buildAbout(user),
+            ],
           ),
-          const SizedBox(height: 24),
-          buildName(user),
-          const SizedBox(height: 24),
-          Center(child: buildUpgradeButton()),
-          const SizedBox(height: 24),
-          const SizedBox(height: 48),
-          buildAbout(user),
-        ],
+        ),
       ),
     );
   }

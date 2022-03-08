@@ -1,4 +1,4 @@
-import 'package:musicapp2/user.dart';
+import 'package:musicapp2/model/user.dart';
 
 class UserPreferences {
   static const myUser = User(

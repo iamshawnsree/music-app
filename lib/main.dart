@@ -1,8 +1,11 @@
+import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:musicapp2/detailed_audio_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:musicapp2/screens/Home.dart';
+import 'package:musicapp2/themes.dart';
+import 'package:musicapp2/utils/user_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,15 +27,21 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Music Streaming App',
-      debugShowMaterialGrid: false,
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    const user = UserPreferences.myUser;
+    return ThemeProvider(
+      initTheme: user.isDarkMode ? MyThemes.darkTheme : MyThemes.lightTheme,
+      child: Builder(
+        builder: (context) => MaterialApp(
+          title: 'Music Streaming App',
+          debugShowMaterialGrid: false,
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          // ignore: prefer_const_constructors
+          home: const MyHomePage(),
+        ),
       ),
-      // ignore: prefer_const_constructors
-      home: MyHomePage(),
     );
   }
 }

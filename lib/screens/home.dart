@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:musicapp2/colors/app_colors.dart' as AppColors;
 import 'package:musicapp2/components/home_screen.dart';
-import 'package:musicapp2/screens/login.dart';
 import 'package:musicapp2/screens/playlist.dart';
 import 'package:musicapp2/screens/profile.dart';
 import 'package:musicapp2/screens/search.dart';
+import 'package:musicapp2/utils/user_preferences.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
+  static final String title = 'User Profile';
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -31,6 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final user = UserPreferences.myUser;
     // ignore: avoid_unnecessary_containers
     return Container(
       color: AppColors.background,
