@@ -3,7 +3,6 @@ import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:musicapp2/utils/user_preferences.dart';
 import 'package:musicapp2/screens/edit_profile_page.dart';
 import 'package:musicapp2/model/user.dart';
-import 'package:musicapp2/widget/appbar_widget.dart';
 import 'package:musicapp2/widget/button_widget.dart';
 import 'package:musicapp2/widget/profile_widget.dart';
 
@@ -22,7 +21,9 @@ class _ProfileState extends State<Profile> {
     return ThemeSwitchingArea(
       child: Builder(
         builder: (context) => Scaffold(
-          appBar: buildAppBar(context),
+          appBar: AppBar(
+            title: const Text('Profile'),
+          ),
           body: ListView(
             physics: const BouncingScrollPhysics(),
             children: [

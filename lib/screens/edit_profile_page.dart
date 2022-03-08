@@ -2,7 +2,6 @@ import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:musicapp2/model/user.dart';
 import 'package:musicapp2/utils/user_preferences.dart';
-import 'package:musicapp2/widget/appbar_widget.dart';
 import 'package:musicapp2/widget/profile_widget.dart';
 import 'package:musicapp2/widget/textfield_widget.dart';
 
@@ -20,7 +19,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
   Widget build(BuildContext context) => ThemeSwitchingArea(
         child: Builder(
           builder: (context) => Scaffold(
-            appBar: buildAppBar(context),
+            appBar: AppBar(
+              title: const Text('Edit profile'),
+            ),
             body: ListView(
               padding: const EdgeInsets.symmetric(horizontal: 32),
               physics: const BouncingScrollPhysics(),
