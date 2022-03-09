@@ -1,4 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' as rootBundle;
+import 'package:musicapp2/model/music_list.dart';
 
 class Search extends StatefulWidget {
   const Search({Key? key}) : super(key: key);
@@ -14,37 +18,80 @@ class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Search your music')),
-      body: Container(
-        margin: EdgeInsets.only(top: 10),
-        padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 20),
-        decoration: BoxDecoration(
-          color: Colors.black38.withAlpha(10),
-          borderRadius: BorderRadius.all(
-            Radius.circular(20),
-          ),
+        appBar: AppBar(
+          title: Text('Search Your Music...'),
         ),
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: "Search .....",
-                  hintStyle: TextStyle(
-                    color: Colors.black.withAlpha(120),
-                  ),
-                  border: InputBorder.none,
-                ),
-                onChanged: (String keyword) {},
-              ),
-            ),
-            Icon(
-              Icons.search,
-              color: Colors.black.withAlpha(120),
-            )
-          ],
-        ),
-      ),
-    );
+        body: FutureBuilder(
+          future: ReadJsonData(),
+          builder: (context, data) {
+            if (data.hasError) {
+              return Center(child: Text("${data.error}"));
+            } else if (data.hasData) {
+              var items = data.data as List<Musiclist>;
+              return ListView.builder(
+                  itemCount: items == null ? 0 : items.length,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      elevation: 1,
+                      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: 50,
+                              height: 50,
+                              child: Image(
+                                image:
+                                    NetworkImage(items[index].image.toString()),
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                            Expanded(
+                                child: Container(
+                              padding: EdgeInsets.only(bottom: 8),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 8, right: 8),
+                                    child: Text(
+                                      items[index].songname.toString(),
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 8, right: 8),
+                                    child: Text(
+                                        items[index].artistname.toString()),
+                                  )
+                                ],
+                              ),
+                            ))
+                          ],
+                        ),
+                      ),
+                    );
+                  });
+            } else {
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+          },
+        ));
+  }
+
+  // ignore: non_constant_identifier_names
+  Future<List<Musiclist>> ReadJsonData() async {
+    final jsondata =
+        await rootBundle.rootBundle.loadString('json/ListMusic.json');
+    final list = json.decode(jsondata) as List<dynamic>;
+    return list.map((e) => Musiclist.fromJson(e)).toList();
   }
 }

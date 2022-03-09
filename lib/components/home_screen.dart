@@ -5,7 +5,6 @@ import 'package:musicapp2/my_tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:musicapp2/colors/app_colors.dart' as AppColors;
 import 'package:musicapp2/screens/login.dart';
-import 'package:musicapp2/screens/search.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
