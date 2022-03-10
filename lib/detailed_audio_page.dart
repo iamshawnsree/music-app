@@ -59,6 +59,10 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
                 actions: [
                   IconButton(
                     onPressed: () {},
+                    icon: Icon(Icons.playlist_add),
+                  ),
+                  IconButton(
+                    onPressed: () {},
                     icon: Icon(Icons.mic_outlined),
                   ),
                 ],

@@ -5,24 +5,32 @@ import 'package:flutter/services.dart' as rootBundle;
 import 'package:musicapp2/model/music_list.dart';
 
 class Search extends StatefulWidget {
-  const Search({Key? key}) : super(key: key);
-
+  Search({Key? key}) : super(key: key);
   @override
   State<Search> createState() => _SearchState();
 }
 
 class _SearchState extends State<Search> {
-  Icon customIcon = const Icon(Icons.search);
-  Widget customSearchBar = const Text('Search Your Music !!');
-
+  String searchText = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Search Your Music...'),
-        ),
+            title: TextField(
+          decoration: const InputDecoration(
+            filled: true,
+            fillColor: Colors.white,
+            border: OutlineInputBorder(),
+            hintText: "Search for song...",
+          ),
+          onChanged: (text) {
+            setState(() {
+              searchText = text;
+            });
+          },
+        )),
         body: FutureBuilder(
-          future: ReadJsonData(),
+          future: ReadJsonData(searchText),
           builder: (context, data) {
             if (data.hasError) {
               return Center(child: Text("${data.error}"));
@@ -88,10 +96,11 @@ class _SearchState extends State<Search> {
   }
 
   // ignore: non_constant_identifier_names
-  Future<List<Musiclist>> ReadJsonData() async {
+  Future<List<Musiclist>> ReadJsonData(String searchText) async {
     final jsondata =
         await rootBundle.rootBundle.loadString('json/ListMusic.json');
     final list = json.decode(jsondata) as List<dynamic>;
+    // return list.where((element) => Musiclist.fromJson(e).c)
     return list.map((e) => Musiclist.fromJson(e)).toList();
   }
 }

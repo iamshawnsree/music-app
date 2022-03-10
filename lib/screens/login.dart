@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:musicapp2/screens/forgot_password.dart';
 import 'package:musicapp2/screens/home.dart';

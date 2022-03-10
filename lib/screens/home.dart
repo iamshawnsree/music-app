@@ -20,7 +20,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List<dynamic> tabs = [
     const HomeScreen(),
-    const Search(),
+    Search(),
     const Profile(),
     const Playlist()
   ];
