@@ -85,6 +85,27 @@ class _HomeScreenState extends State<HomeScreen>
       case "back":
         Navigator.pop(context);
         break;
+      case "Play":
+        break;
+      case "Pause":
+        AudioPlayer().stop();
+        break;
+      case "Privious":
+        break;
+      case "Next":
+        break;
+      case "Home":
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => HomeScreen()));
+        break;
+      case "Login":
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Login()));
+        break;
+      case "Playlist":
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Playlist()));
+        break;
       default:
     }
   }

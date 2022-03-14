@@ -16,19 +16,8 @@ class _MyplaylistState extends State<Myplaylist> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: TextField(
-          decoration: const InputDecoration(
-            filled: true,
-            fillColor: Colors.white,
-            border: OutlineInputBorder(),
-            hintText: "Search for song...",
-          ),
-          onChanged: (text) {
-            setState(() {
-              searchText = text;
-            });
-          },
-        )),
+          title: Text("Playlists"),
+        ),
         body: FutureBuilder(
           future: ReadJsonData(searchText),
           builder: (context, data) {

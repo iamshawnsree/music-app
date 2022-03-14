@@ -89,7 +89,7 @@ class _ProfileState extends State<Profile> {
       );
 
   Widget buildUpgradeButton() => ButtonWidget(
-        text: 'Upgrade To PRO',
+        text: 'Edit',
         onClicked: () {},
       );
 
