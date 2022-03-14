@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:musicapp2/detailed_audio_page.dart';
 import 'package:musicapp2/my_tabs.dart';
-
+import 'package:alan_voice/alan_voice.dart';
 import 'package:flutter/material.dart';
 import 'package:musicapp2/colors/app_colors.dart' as AppColors;
 import 'package:musicapp2/screens/login.dart';
@@ -40,9 +40,17 @@ class _HomeScreenState extends State<HomeScreen>
     });
   }
 
+  setupAlan() {
+    AlanVoice.addButton(
+      "2a7d3516fa0a7bb8a07dab96e0745e9d2e956eca572e1d8b807a3e2338fdd0dc/stage",
+      buttonAlign: AlanVoice.BUTTON_ALIGN_RIGHT,
+    );
+  }
+
   @override
   void initState() {
     super.initState();
+    setupAlan();
     _tabController = TabController(length: 3, vsync: this);
     _scrollController = ScrollController();
     ReadData();

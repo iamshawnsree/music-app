@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:musicapp2/detailed_audio_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:musicapp2/screens/Home.dart';
+import 'package:musicapp2/screens/login.dart';
 import 'package:musicapp2/themes.dart';
 import 'package:musicapp2/utils/user_preferences.dart';
 
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
           ),
           // ignore: prefer_const_constructors
-          home: const MyHomePage(),
+          home: Login(),
         ),
       ),
     );

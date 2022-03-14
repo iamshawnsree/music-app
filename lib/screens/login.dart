@@ -1,7 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:musicapp2/components/home_screen.dart';
 import 'package:musicapp2/screens/forgot_password.dart';
 import 'package:musicapp2/screens/home.dart';
+import 'package:musicapp2/screens/profile.dart';
 import 'package:musicapp2/screens/register.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -118,9 +120,18 @@ class Login extends StatelessWidget {
             width: 250,
             decoration: BoxDecoration(
                 color: Colors.blue, borderRadius: BorderRadius.circular(20)),
-            child: FlatButton(
+            child: ElevatedButton(
               onPressed: () {
-                login(context);
+                Fluttertoast.showToast(
+                    msg: "Successful Login",
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.CENTER,
+                    timeInSecForIosWeb: 1,
+                    backgroundColor: Colors.blue,
+                    textColor: Colors.white,
+                    fontSize: 16.0);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => const MyHomePage()));
               },
               child: Text(
                 'Login',
@@ -136,7 +147,7 @@ class Login extends StatelessWidget {
               Navigator.push(
                   context, MaterialPageRoute(builder: (_) => Register()));
             },
-            child: Text(
+            child: const Text(
               'New User? Create Account',
               style: TextStyle(color: Colors.blue, fontSize: 15),
             ),
