@@ -26,4 +26,15 @@ class Musiclist {
     image = json['image'];
     songurl = json['songurl'];
   }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['artistname'] = artistname;
+    data['songname'] = songname;
+    data['duration'] = duration;
+    data['raitings'] = raitings;
+    data['image'] = image;
+    data['songurl'] = songurl;
+    return data;
+  }
 }

@@ -12,6 +12,7 @@ class Search extends StatefulWidget {
 
 class _SearchState extends State<Search> {
   String searchText = "";
+  List songs = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +33,7 @@ class _SearchState extends State<Search> {
         body: FutureBuilder(
           future: ReadJsonData(searchText),
           builder: (context, data) {
+            print('data :: $data');
             if (data.hasError) {
               return Center(child: Text("${data.error}"));
             } else if (data.hasData) {
@@ -99,8 +101,9 @@ class _SearchState extends State<Search> {
   Future<List<Musiclist>> ReadJsonData(String searchText) async {
     final jsondata =
         await rootBundle.rootBundle.loadString('json/ListMusic.json');
-    final list = json.decode(jsondata) as List<dynamic>;
+    final list = json.decode(jsondata);
     // return list.where((element) => Musiclist.fromJson(e).c)
+
     return list.map((e) => Musiclist.fromJson(e)).toList();
   }
 }

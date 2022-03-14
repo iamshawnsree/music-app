@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:musicapp2/colors/app_colors.dart' as AppColors;
 import 'package:musicapp2/screens/login.dart';
 
+import '../screens/search.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -45,6 +47,20 @@ class _HomeScreenState extends State<HomeScreen>
       "2a7d3516fa0a7bb8a07dab96e0745e9d2e956eca572e1d8b807a3e2338fdd0dc/stage",
       buttonAlign: AlanVoice.BUTTON_ALIGN_RIGHT,
     );
+    AlanVoice.callbacks.add((command) => _handleCommand(command.data));
+  }
+
+  _handleCommand(Map<String, dynamic> response) {
+    switch (response["command"]) {
+      case "forward":
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Search()));
+        break;
+      case "back":
+        Navigator.pop(context);
+        break;
+      default:
+    }
   }
 
   @override

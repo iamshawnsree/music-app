@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:musicapp2/screens/edit_profile_page.dart';
-import 'package:musicapp2/screens/home.dart';
 import 'package:musicapp2/widget/button_widget.dart';
 import 'package:musicapp2/widget/profile_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -17,18 +16,18 @@ class _ProfileState extends State<Profile> {
   @override
   void initState() {
     super.initState();
-    detectUser();
+    // detectUser();
   }
 
   final FirebaseAuth _auth1 = FirebaseAuth.instance;
-  void detectUser() async {
-    if (_auth1.currentUser == null) {
-      Navigator.push(context, MaterialPageRoute(builder: (_) => MyHomePage()));
-    }
-    //   //else {
-    //   //   Navigator.push(context, MaterialPageRoute(builder: (_) => const Profile()));
-    //   // }
-  }
+  // void detectUser() async {
+  //   if (_auth1.currentUser == null) {
+  //     Navigator.push(context, MaterialPageRoute(builder: (_) => Login()));
+  //   }
+  //   //else {
+  //   //   Navigator.push(context, MaterialPageRoute(builder: (_) => const Profile()));
+  //   // }
+  // }
 
   @override
   Widget build(BuildContext context) {
