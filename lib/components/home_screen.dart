@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:musicapp2/detailed_audio_page.dart';
 import 'package:musicapp2/my_tabs.dart';
 import 'package:alan_voice/alan_voice.dart';
@@ -10,6 +11,8 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/services.dart';
 import 'package:musicapp2/detailed_audio_page.dart';
 import 'package:musicapp2/audiofile.dart';
+import 'package:musicapp2/screens/login.dart';
+import 'package:musicapp2/screens/playlist.dart';
 
 import '../screens/search.dart';
 
@@ -67,6 +70,7 @@ class _HomeScreenState extends State<HomeScreen>
       case "Play":
         break;
       case "Pause":
+        AudioPlayer().stop();
         break;
       case "Privious":
         break;
@@ -75,7 +79,14 @@ class _HomeScreenState extends State<HomeScreen>
       case "Home":
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => HomeScreen()));
-
+        break;
+      case "Login":
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Login()));
+        break;
+      case "Playlist":
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Playlist()));
         break;
       default:
     }
