@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:musicapp2/api.dart';
+import 'package:musicapp2/screens/profile.dart';
+import 'package:musicapp2/widget/button_widget.dart';
 
 class AudioFile extends StatefulWidget {
   const AudioFile(
@@ -209,8 +211,21 @@ class _AudioFileState extends State<AudioFile> {
           ),
           //slider(),
           loadAsset(),
+          const SizedBox(height: 24),
+          Center(child: buildUpgradeButton()),
         ],
       ),
     );
   }
+
+  Widget buildUpgradeButton() => ButtonWidget(
+        text: 'Add to Playlist',
+        onClicked: () {
+          Navigator.of(context)
+              .pushNamed('playlist', arguments: [this.widget.audioPath]);
+          // Navigator.of(context).push(
+          //   MaterialPageRoute(builder: (context) => Profile()),
+          // );
+        },
+      );
 }

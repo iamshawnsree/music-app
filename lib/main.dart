@@ -1,9 +1,11 @@
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:musicapp2/components/home_screen.dart';
 import 'package:musicapp2/detailed_audio_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:musicapp2/screens/Home.dart';
+import 'package:musicapp2/screens/login.dart';
 import 'package:musicapp2/themes.dart';
 import 'package:musicapp2/utils/user_preferences.dart';
 
@@ -38,8 +40,9 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
+
           // ignore: prefer_const_constructors
-          home: const MyHomePage(),
+          home: Login(),
         ),
       ),
     );

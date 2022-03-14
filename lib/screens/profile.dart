@@ -38,10 +38,10 @@ class _ProfileState extends State<Profile> {
               const SizedBox(height: 24),
               buildName(user),
               const SizedBox(height: 24),
-              Center(child: buildUpgradeButton()),
-              const SizedBox(height: 24),
+              // Center(child: buildUpgradeButton()),
+              // const SizedBox(height: 24),
               const SizedBox(height: 48),
-              buildAbout(user),
+              buildCountry(user),
             ],
           ),
         ),
@@ -63,26 +63,19 @@ class _ProfileState extends State<Profile> {
         ],
       );
 
-  Widget buildUpgradeButton() => ButtonWidget(
-        text: 'Upgrade To PRO',
-        onClicked: () {},
-      );
+  // Widget buildUpgradeButton() => ButtonWidget(
+  //       text: 'UPDATE',
+  //       onClicked: () {},
+  //     );
 
-  Widget buildAbout(User user) => Container(
-        padding: const EdgeInsets.symmetric(horizontal: 48),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'About',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 16),
-            Text(
-              user.about,
-              style: TextStyle(fontSize: 16, height: 1.4),
-            ),
-          ],
-        ),
+  Widget buildCountry(User user) => Column(
+        children: [
+          Text("Country"),
+          const SizedBox(height: 6),
+          Text(
+            user.country,
+            style: TextStyle(color: Colors.grey),
+          )
+        ],
       );
 }

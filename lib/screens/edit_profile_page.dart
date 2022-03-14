@@ -1,9 +1,13 @@
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:musicapp2/model/user.dart';
+import 'package:musicapp2/screens/profile.dart';
 import 'package:musicapp2/utils/user_preferences.dart';
 import 'package:musicapp2/widget/profile_widget.dart';
 import 'package:musicapp2/widget/textfield_widget.dart';
+import 'package:musicapp2/widget/button_widget.dart';
+
+import '../components/playlist_screen.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({Key? key}) : super(key: key);
@@ -45,14 +49,24 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 ),
                 const SizedBox(height: 24),
                 TextFieldWidget(
-                  label: 'About',
-                  text: user.about,
-                  maxLines: 5,
-                  onChanged: (about) {},
+                  label: 'Country',
+                  text: user.country,
+                  maxLines: 1,
+                  onChanged: (country) {},
                 ),
+                const SizedBox(height: 24),
+                Center(child: buildUpgradeButton()),
               ],
             ),
           ),
         ),
+      );
+  Widget buildUpgradeButton() => ButtonWidget(
+        text: 'UPDATE',
+        onClicked: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => Profile()),
+          );
+        },
       );
 }
