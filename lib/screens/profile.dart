@@ -5,6 +5,8 @@ import 'package:musicapp2/widget/button_widget.dart';
 import 'package:musicapp2/widget/profile_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import 'login.dart';
+
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
 
@@ -13,52 +15,61 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  User? user;
+  final auth = FirebaseAuth.instance;
   @override
   void initState() {
     super.initState();
-    // detectUser();
+    setState(() {
+      user = auth.currentUser;
+    });
   }
 
-  final FirebaseAuth _auth1 = FirebaseAuth.instance;
-  // void detectUser() async {
-  //   if (_auth1.currentUser == null) {
-  //     Navigator.push(context, MaterialPageRoute(builder: (_) => Login()));
-  //   }
-  //   //else {
-  //   //   Navigator.push(context, MaterialPageRoute(builder: (_) => const Profile()));
-  //   // }
-  // }
+  Future getUser() async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    var user = auth.currentUser;
+    return user;
+  }
 
   @override
   Widget build(BuildContext context) {
-    final user = _auth1.currentUser!;
     return ThemeSwitchingArea(
       child: Builder(
         builder: (context) => Scaffold(
           appBar: AppBar(
             title: const Text('Profile'),
           ),
-          body: ListView(
-            physics: const BouncingScrollPhysics(),
-            children: [
-              ProfileWidget(
-                imagePath:
-                    'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=333&q=80',
-                onClicked: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => EditProfilePage()),
+          body: FutureBuilder(
+              future: getUser(),
+              builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+                if (snapshot.hasData) {
+                  return ListView(
+                    physics: const BouncingScrollPhysics(),
+                    children: [
+                      ProfileWidget(
+                        imagePath:
+                            'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=333&q=80',
+                        onClicked: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (context) => EditProfilePage()),
+                          );
+                        },
+                      ),
+                      const SizedBox(height: 24),
+                      buildName(user!.email ?? "loading"),
+                      const SizedBox(height: 24),
+                      Center(child: buildUpgradeButton()),
+                      const SizedBox(height: 24),
+                      const SizedBox(height: 48),
+                      buildAbout(
+                          "Certified Personal Trainer and Nutritionist with years of experience in creating effective diets and training plans focused on achieving individual customers goals in a smooth way."),
+                    ],
                   );
-                },
-              ),
-              const SizedBox(height: 24),
-              buildName(user),
-              const SizedBox(height: 24),
-              Center(child: buildUpgradeButton()),
-              const SizedBox(height: 24),
-              const SizedBox(height: 48),
-              buildAbout(user),
-            ],
-          ),
+                } else {
+                  return CircularProgressIndicator(color: Colors.blue);
+                }
+              }),
         ),
       ),
     );
@@ -66,15 +77,15 @@ class _ProfileState extends State<Profile> {
 
   /// other way there is no user logged.
 
-  Widget buildName(User user) => Column(
+  Widget buildName(String email) => Column(
         children: [
           Text(
-            user.email.toString(),
+            email,
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
           ),
           const SizedBox(height: 4),
           Text(
-            user.email.toString(),
+            email,
             style: TextStyle(color: Colors.grey),
           )
         ],
@@ -85,7 +96,7 @@ class _ProfileState extends State<Profile> {
         onClicked: () {},
       );
 
-  Widget buildAbout(User user) => Container(
+  Widget buildAbout(String about) => Container(
         padding: const EdgeInsets.symmetric(horizontal: 48),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

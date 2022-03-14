@@ -122,16 +122,7 @@ class Login extends StatelessWidget {
                 color: Colors.blue, borderRadius: BorderRadius.circular(20)),
             child: ElevatedButton(
               onPressed: () {
-                Fluttertoast.showToast(
-                    msg: "Successful Login",
-                    toastLength: Toast.LENGTH_SHORT,
-                    gravity: ToastGravity.CENTER,
-                    timeInSecForIosWeb: 1,
-                    backgroundColor: Colors.blue,
-                    textColor: Colors.white,
-                    fontSize: 16.0);
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const MyHomePage()));
+                login(context);
               },
               child: Text(
                 'Login',
