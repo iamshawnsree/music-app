@@ -8,6 +8,10 @@ import 'package:musicapp2/screens/login.dart';
 import 'dart:async' show Future;
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/services.dart';
+import 'package:musicapp2/detailed_audio_page.dart';
+import 'package:musicapp2/audiofile.dart';
+
+import '../screens/search.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -48,6 +52,33 @@ class _HomeScreenState extends State<HomeScreen>
       "2a7d3516fa0a7bb8a07dab96e0745e9d2e956eca572e1d8b807a3e2338fdd0dc/stage",
       buttonAlign: AlanVoice.BUTTON_ALIGN_RIGHT,
     );
+    AlanVoice.callbacks.add((command) => _handleCommand(command.data));
+  }
+
+  _handleCommand(Map<String, dynamic> response) {
+    switch (response["command"]) {
+      case "Search":
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Search()));
+        break;
+      case "back":
+        Navigator.pop(context);
+        break;
+      case "Play":
+        break;
+      case "Pause":
+        break;
+      case "Privious":
+        break;
+      case "Next":
+        break;
+      case "Home":
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => HomeScreen()));
+
+        break;
+      default:
+    }
   }
 
   @override
