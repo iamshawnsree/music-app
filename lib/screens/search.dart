@@ -100,8 +100,8 @@ class _SearchState extends State<Search> {
   // ignore: non_constant_identifier_names
   Future<List<Musiclist>> ReadJsonData(String searchText) async {
     final jsondata =
-        await rootBundle.rootBundle.loadString('json/ListMusic.json');
-    final list = json.decode(jsondata);
+        await rootBundle.rootBundle.loadString('assets/ListMusic.json');
+    final list = json.decode(jsondata) as List<dynamic>;
     // return list.where((element) => Musiclist.fromJson(e).c)
 
     return list.map((e) => Musiclist.fromJson(e)).toList();

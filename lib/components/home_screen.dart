@@ -1,10 +1,20 @@
 import 'dart:convert';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:musicapp2/detailed_audio_page.dart';
 import 'package:musicapp2/my_tabs.dart';
 import 'package:alan_voice/alan_voice.dart';
 import 'package:flutter/material.dart';
 import 'package:musicapp2/colors/app_colors.dart' as AppColors;
 import 'package:musicapp2/screens/login.dart';
+import 'dart:async' show Future;
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter/services.dart';
+import 'package:musicapp2/detailed_audio_page.dart';
+import 'package:musicapp2/audiofile.dart';
+import 'package:musicapp2/screens/login.dart';
+import 'package:musicapp2/screens/playlist.dart';
+
+import '../screens/search.dart';
 
 import '../screens/search.dart';
 
@@ -19,22 +29,38 @@ class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
   Icon customIcon = const Icon(Icons.search);
 
+  late List pMusic = [];
   late List popularMusic = [];
   late List ListViewMusic = [];
+  late List trendingMusic = [];
 
   late ScrollController _scrollController;
   late TabController _tabController;
 
   ReadData() async {
     await DefaultAssetBundle.of(context)
-        .loadString("json/music.json")
+        .loadString("assets/music.json")
+        .then((s) {
+      setState(() {
+        pMusic = json.decode(s);
+      });
+    });
+    await DefaultAssetBundle.of(context)
+        .loadString("assets/popularmusic.json")
         .then((s) {
       setState(() {
         popularMusic = json.decode(s);
       });
     });
     await DefaultAssetBundle.of(context)
-        .loadString("json/ListMusic.json")
+        .loadString("assets/trendingmusic.json")
+        .then((s) {
+      setState(() {
+        trendingMusic = json.decode(s);
+      });
+    });
+    await DefaultAssetBundle.of(context)
+        .loadString("assets/ListMusic.json")
         .then((s) {
       setState(() {
         ListViewMusic = json.decode(s);
@@ -52,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen>
 
   _handleCommand(Map<String, dynamic> response) {
     switch (response["command"]) {
-      case "forward":
+      case "Search":
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => Search()));
         break;
@@ -128,9 +154,7 @@ class _HomeScreenState extends State<HomeScreen>
                             child: PageView.builder(
                                 controller:
                                     PageController(viewportFraction: 0.8),
-                                itemCount: popularMusic == null
-                                    ? 0
-                                    : popularMusic.length,
+                                itemCount: pMusic == null ? 0 : pMusic.length,
                                 itemBuilder: (_, i) {
                                   return Container(
                                     height: 150,
@@ -139,8 +163,8 @@ class _HomeScreenState extends State<HomeScreen>
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(15),
                                         image: DecorationImage(
-                                          image: NetworkImage(
-                                              popularMusic[i]["image"]),
+                                          image:
+                                              NetworkImage(pMusic[i]["image"]),
                                           fit: BoxFit.fill,
                                         )),
                                   );
@@ -290,7 +314,7 @@ class _HomeScreenState extends State<HomeScreen>
                                               color: AppColors.loveColor,
                                             ),
                                             child: Text(
-                                              "Favourites",
+                                              "New",
                                               style: TextStyle(
                                                 fontSize: 12,
                                                 fontFamily: "Avenir",
@@ -310,20 +334,241 @@ class _HomeScreenState extends State<HomeScreen>
                           );
                         }),
                     Material(
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: Colors.grey,
-                        ),
-                        title: Text("content  "),
-                      ),
+                      child: ListView.builder(
+                          itemCount:
+                              popularMusic == null ? 0 : popularMusic.length,
+                          itemBuilder: (_, index) {
+                            return Container(
+                              margin: const EdgeInsets.only(
+                                  left: 20, right: 20, top: 10, bottom: 10),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: AppColors.tabVarViewColor,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 2,
+                                        offset: Offset(0, 0),
+                                        color: Colors.grey.withOpacity(0.2),
+                                      )
+                                    ]),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                DetailedAudioPage(
+                                                  musicData: popularMusic,
+                                                  index: index,
+                                                )));
+                                  },
+                                  child: Container(
+                                    padding: const EdgeInsets.all(8),
+                                    child: Row(
+                                      children: [
+                                        Container(
+                                          height: 100,
+                                          width: 90,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              image: DecorationImage(
+                                                image: NetworkImage(
+                                                  popularMusic[index]["image"],
+                                                ),
+                                                fit: BoxFit.fill,
+                                              )),
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Icon(
+                                                    Icons.star_border_purple500,
+                                                    size: 20,
+                                                    color: AppColors.starColor),
+                                                SizedBox(
+                                                  width: 8,
+                                                ),
+                                                Text(
+                                                  popularMusic[index]
+                                                      ["raitings"],
+                                                  style: TextStyle(
+                                                    color: AppColors.menu2Color,
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                            Text(
+                                              popularMusic[index]["songname"],
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                fontFamily: "Avenir",
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                            Text(
+                                              popularMusic[index]["artistname"],
+                                              style: TextStyle(
+                                                fontSize: 13,
+                                                fontFamily: "Avenir",
+                                                fontWeight: FontWeight.normal,
+                                                color: AppColors.subTitleText,
+                                              ),
+                                            ),
+                                            Container(
+                                              width: 80,
+                                              height: 20,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(3),
+                                                color: AppColors.loveColor,
+                                              ),
+                                              child: Text(
+                                                "Popular",
+                                                style: TextStyle(
+                                                  fontSize: 12,
+                                                  fontFamily: "Avenir",
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                              alignment: Alignment.center,
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            );
+                          }),
                     ),
                     Material(
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: Colors.grey,
-                        ),
-                        title: Text("content  "),
-                      ),
+                      child: ListView.builder(
+                          itemCount:
+                              trendingMusic == null ? 0 : trendingMusic.length,
+                          itemBuilder: (_, index) {
+                            return Container(
+                              margin: const EdgeInsets.only(
+                                  left: 20, right: 20, top: 10, bottom: 10),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: AppColors.tabVarViewColor,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 2,
+                                        offset: Offset(0, 0),
+                                        color: Colors.grey.withOpacity(0.2),
+                                      )
+                                    ]),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                DetailedAudioPage(
+                                                  musicData: trendingMusic,
+                                                  index: index,
+                                                )));
+                                  },
+                                  child: Container(
+                                    padding: const EdgeInsets.all(8),
+                                    child: Row(
+                                      children: [
+                                        Container(
+                                          height: 100,
+                                          width: 90,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              image: DecorationImage(
+                                                image: NetworkImage(
+                                                  trendingMusic[index]["image"],
+                                                ),
+                                                fit: BoxFit.fill,
+                                              )),
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Icon(
+                                                    Icons.star_border_purple500,
+                                                    size: 20,
+                                                    color: AppColors.starColor),
+                                                SizedBox(
+                                                  width: 8,
+                                                ),
+                                                Text(
+                                                  trendingMusic[index]
+                                                      ["raitings"],
+                                                  style: TextStyle(
+                                                    color: AppColors.menu2Color,
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                            Text(
+                                              trendingMusic[index]["songname"],
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                fontFamily: "Avenir",
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                            Text(
+                                              trendingMusic[index]
+                                                  ["artistname"],
+                                              style: TextStyle(
+                                                fontSize: 13,
+                                                fontFamily: "Avenir",
+                                                fontWeight: FontWeight.normal,
+                                                color: AppColors.subTitleText,
+                                              ),
+                                            ),
+                                            Container(
+                                              width: 80,
+                                              height: 20,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(3),
+                                                color: AppColors.loveColor,
+                                              ),
+                                              child: Text(
+                                                "Trending",
+                                                style: TextStyle(
+                                                  fontSize: 12,
+                                                  fontFamily: "Avenir",
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                              alignment: Alignment.center,
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            );
+                          }),
                     ),
                   ]),
                 ))

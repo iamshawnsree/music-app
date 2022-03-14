@@ -85,7 +85,7 @@ class Register extends StatelessWidget {
                   /*decoration: BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(50.0)),*/
-                  child: Image.asset("img/register-png-1.png")),
+                  child: Image.asset("assets/register-png-1.png")),
             ),
           ),
           // ignore: prefer_const_constructors

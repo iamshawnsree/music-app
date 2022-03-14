@@ -2,7 +2,6 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:musicapp2/api.dart';
 
 class AudioFile extends StatefulWidget {
   const AudioFile(
@@ -108,7 +107,7 @@ class _AudioFileState extends State<AudioFile> {
   Widget btnFast() {
     return IconButton(
       icon: ImageIcon(
-        AssetImage('img/forward.png'),
+        AssetImage('assets/forward.png'),
         size: 15,
         color: Colors.black,
       ),
@@ -124,7 +123,7 @@ class _AudioFileState extends State<AudioFile> {
         this.widget.advancePlayer.setPlaybackRate(0.5);
       },
       icon: ImageIcon(
-        AssetImage('img/backword.png'),
+        AssetImage('assets/backword.png'),
         size: 15,
         color: Colors.black,
       ),
@@ -134,7 +133,7 @@ class _AudioFileState extends State<AudioFile> {
   Widget btnloop() {
     return IconButton(
       icon: ImageIcon(
-        AssetImage('img/loop.png'),
+        AssetImage('assets/loop.png'),
         size: 15,
         color: Colors.black,
       ),
@@ -145,7 +144,7 @@ class _AudioFileState extends State<AudioFile> {
   Widget btnRepeat() {
     return IconButton(
       icon: ImageIcon(
-        AssetImage('img/repeat.png'),
+        AssetImage('assets/repeat.png'),
         size: 15,
         color: color,
       ),
