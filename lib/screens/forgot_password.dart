@@ -45,7 +45,7 @@ class ForgotPassword extends StatelessWidget {
                   /*decoration: BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(50.0)),*/
-                  child: Image.asset("img/forgot.png")),
+                  child: Image.asset("assets/forgot.png")),
             ),
           ),
           Padding(

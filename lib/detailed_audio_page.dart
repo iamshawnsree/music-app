@@ -124,8 +124,7 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
                         shape: BoxShape.circle,
                         border: Border.all(color: Colors.white, width: 2),
                         image: DecorationImage(
-                            image: AssetImage("img/pic-1.png"),
-                            fit: BoxFit.cover)),
+                            image: AssetImage("pic-1.png"), fit: BoxFit.cover)),
                   )),
             ),
           )

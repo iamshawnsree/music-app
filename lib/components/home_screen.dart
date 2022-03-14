@@ -5,6 +5,9 @@ import 'package:alan_voice/alan_voice.dart';
 import 'package:flutter/material.dart';
 import 'package:musicapp2/colors/app_colors.dart' as AppColors;
 import 'package:musicapp2/screens/login.dart';
+import 'dart:async' show Future;
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter/services.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -25,14 +28,14 @@ class _HomeScreenState extends State<HomeScreen>
 
   ReadData() async {
     await DefaultAssetBundle.of(context)
-        .loadString("json/music.json")
+        .loadString("assets/music.json")
         .then((s) {
       setState(() {
         popularMusic = json.decode(s);
       });
     });
     await DefaultAssetBundle.of(context)
-        .loadString("json/ListMusic.json")
+        .loadString("assets/ListMusic.json")
         .then((s) {
       setState(() {
         ListViewMusic = json.decode(s);

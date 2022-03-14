@@ -75,7 +75,7 @@ class Login extends StatelessWidget {
                   /*decoration: BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(50.0)),*/
-                  child: Image.asset("img/images.png")),
+                  child: Image.asset("assets/images.png")),
             ),
           ),
           Padding(
