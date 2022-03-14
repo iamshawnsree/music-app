@@ -60,8 +60,7 @@ class _ProfileState extends State<Profile> {
                       Center(child: buildUpgradeButton()),
                       const SizedBox(height: 24),
                       const SizedBox(height: 48),
-                      buildAbout(
-                          "Certified Personal Trainer and Nutritionist with years of experience in creating effective diets and training plans focused on achieving individual customers goals in a smooth way."),
+                      buildAbout(),
                     ],
                   );
                 } else {
@@ -94,19 +93,19 @@ class _ProfileState extends State<Profile> {
         onClicked: () {},
       );
 
-  Widget buildAbout(String about) => Container(
+  Widget buildAbout() => Container(
         padding: const EdgeInsets.symmetric(horizontal: 48),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
             Text(
-              'About',
+              'Country',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
             Text(
               // user.about,
-              "About",
+              "Nepal",
               style: TextStyle(fontSize: 16, height: 1.4),
             ),
           ],

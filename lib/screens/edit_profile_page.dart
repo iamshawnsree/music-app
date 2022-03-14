@@ -46,12 +46,12 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   onChanged: (email) {},
                 ),
                 const SizedBox(height: 24),
-                // TextFieldWidget(
-                //   label: 'Country',
-                //   text: user.country,
-                //   maxLines: 1,
-                //   onChanged: (country) {},
-                // ),
+                TextFieldWidget(
+                  label: 'Country',
+                  text: user.country,
+                  maxLines: 1,
+                  onChanged: (country) {},
+                ),
                 const SizedBox(height: 24),
                 Center(child: buildUpgradeButton()),
               ],

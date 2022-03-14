@@ -226,7 +226,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.7.0"
-<<<<<<< HEAD
   model:
     dependency: "direct main"
     description:
@@ -241,7 +240,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
-=======
   package_info:
     dependency: transitive
     description:
@@ -249,7 +247,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.2"
->>>>>>> ff7a5e3272452bb3aa821304730489b71c01d1bb
   path:
     dependency: transitive
     description:
