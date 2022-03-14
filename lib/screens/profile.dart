@@ -5,8 +5,6 @@ import 'package:musicapp2/widget/button_widget.dart';
 import 'package:musicapp2/widget/profile_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import 'login.dart';
-
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
 
