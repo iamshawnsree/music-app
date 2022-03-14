@@ -1,0 +1,194 @@
+[
+  {
+    "id":1,
+    "artistname":"Blue",
+    "songname":"One Love",
+    "duration":"4:12",
+    "raitings":"4.1",
+    "image":"https://wallpapercave.com/dwp1x/wp10635302.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/d5/85/a9/d585a91d-3043-7456-cb94-5ac7e9dfcba6/mzaf_11357819007776656099.plus.aac.p.m4a"
+  },
+  {
+  "id":2,
+   "artistname":"Adele",
+    "songname":"Hello",
+    "duration":"3:30",
+    "raitings":"4.1",
+    "image":"https://wallpapercave.com/dwp1x/wp1809774.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/e8/28/29/e828299c-cea7-dd3e-8612-77a632bd60e3/mzaf_7797752939119995161.plus.aac.p.m4a"
+  },
+  {
+    "id":3,
+    "artistname":"Maroon V",
+    "songname":"Sugar",
+    "duration":"3:56",
+    "raitings":"4.1",
+    "image":"https://wallpapercave.com/dwp1x/wp1822271.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/88/e1/a1/88e1a1ee-e99f-6a08-412d-a72ba96c4cb3/mzaf_13042561245977284587.plus.aac.p.m4a" 
+  },
+  
+  {
+    "id":4,
+    "artistname":"Wiz Khalifia ft. Charlie Puth",
+    "songname":"See You Again",
+    "duration":"3:57",
+    "raitings":"4.1",
+     "image":"https://wallpapercave.com/wp/wp1830928.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ae/cd/98/aecd98b8-3149-7125-0f3b-d5d3565024ee/mzaf_3586092188460258172.plus.aac.p.m4a" 
+  },
+  {
+    "id":5,
+    "artistname":"Hoobastank",
+    "songname":"The Reason",
+    "duration":"4:10",
+    "raitings":"4.1",
+     "image":"https://wallpapercave.com/wp/wp6937820.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/1d/73/10/1d731020-70e8-8a3e-0007-d9f7fc451eba/mzaf_9873262183486304217.plus.aac.p.m4a" 
+  },
+  {
+    "id":6,
+    "artistname":"Calum Scott",
+    "songname":"You Are The Reason",
+    "duration":"3:24",
+    "raitings":"4.1",
+    "image":"https://wallpapercave.com/wp/wp6187146.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/94/7f/c1/947fc132-7f37-57d1-3b5f-7ccfe0720166/mzaf_10098171747568039089.plus.aac.p.m4a" 
+  },
+  {
+    "id":7,
+    "artistname":"The Beatles",
+    "songname":"Hey Jude",
+    "duration":"8:09",
+    "raitings":"4.1",
+    "image":"https://images4.alphacoders.com/247/247756.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/12/39/52/1239520e-a06f-7c43-4593-45ce38d19175/mzaf_15032527333822393196.plus.aac.p.m4a" 
+  },
+  {
+    "id":8,
+    "artistname":"James Arthur",
+    "songname":" Falling Like The Stars",
+    "duration":"4:5",
+    "raitings":"4.1",
+    "image":"https://wallpapercave.com/wp/wp2513257.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/c1/37/10/c137101f-2c56-9b22-fbcb-81063cdb5321/mzaf_1478538002088800447.plus.aac.p.m4a"
+  },
+  {
+    "id":9,
+    "artistname":"Post Malone, Swae Lee",
+    "songname":"Sunflower",
+    "duration":"2:41",
+    "raitings":"4.1",
+    "image":"https://wallpapercave.com/wp/wp4153042.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/9e/d2/57/9ed257de-b86b-45d3-1f50-349fdedf40c8/mzaf_3401877161381844275.plus.aac.p.m4a" 
+  },
+  {
+    "id":10,
+    "artistname":"Sajjan Raj Vaidya",
+    "songname":"Naganya Maya",
+    "duration":"5:20",
+    "raitings":"4.1",
+   "image":"https://lastfm.freetls.fastly.net/i/u/ar0/5f0cb5dab491bc00b69708eb0d2190e0.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/8c/a1/0d/8ca10dde-01c1-5ca0-b3c2-246daacc62f4/mzaf_15651121630370104766.plus.aac.p.m4a"
+  },
+  {
+    "id":11,
+    "artistname":"Kailash Kher",
+    "songname":"Saiyyan",
+    "duration":"5:09",
+    "raitings":"4.1",
+    "image":"https://wallpapercave.com/wp/wp8215385.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/95/df/9f/95df9f9a-f238-d0c6-fc3b-772a6bc42684/mzaf_5779307221856579597.plus.aac.p.m4a"
+  },
+  
+  {
+    "id":12,
+    "artistname":"Calum Scott",
+    "songname":"You Are The Reason",
+    "duration":"3:24",
+    "raitings":"4.1",
+    "image":"https://wallpapercave.com/wp/wp6187146.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/94/7f/c1/947fc132-7f37-57d1-3b5f-7ccfe0720166/mzaf_10098171747568039089.plus.aac.p.m4a" 
+  },
+  {
+    "id":13,
+    "artistname":"Ed Sheeran",
+    "songname":"Perfect",
+    "duration":"4:39",
+    "raitings":"4.1",
+    "image":"https://wallpapercave.com/wp/wp8483761.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/59/31/91/5931919c-9328-3f1a-007c-4679799bfdb9/mzaf_9373761365529925269.plus.aac.p.m4a" 
+  },
+  {
+    "id":14,
+    "artistname":"James Blunt",
+    "songname":"You're Beautiful",
+    "duration":"3:22",
+    "raitings":"4.1",
+    "image":"https://wallpapercave.com/wp/wp3850562.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/53/2e/bf/532ebf38-dd5c-636a-c92e-07612f82d07d/mzaf_3284361177825243645.plus.aac.p.m4a" 
+  },
+  {
+    "id":15,
+    "artistname":"Hoobastank",
+    "songname":"The Reason",
+    "duration":"4:10",
+    "raitings":"4.1",
+     "image":"https://wallpapercave.com/wp/wp6937820.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/1d/73/10/1d731020-70e8-8a3e-0007-d9f7fc451eba/mzaf_9873262183486304217.plus.aac.p.m4a" 
+  },
+  {
+    "id":16,
+    "artistname":"The Script",
+    "songname":"The Man Who Can’t Be Moved",
+    "duration":"3:39",
+    "raitings":"4.1",
+    "image":"https://wallpapercave.com/wp/wp1885010.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/b3/cb/d2/b3cbd2dc-261a-61cd-bf42-9b9628484602/mzaf_7201626911749849680.plus.aac.p.m4a"
+  },
+  {
+    "id":17,
+    "artistname":"Powfu",
+    "songname":"death bed",
+    "duration":"2:53",
+    "raitings":"4.1",
+    "image":"https://wallpapercave.com/wp/wp6161529.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e9/4a/29/e94a295b-d16f-39b9-7d67-c0f075fead51/mzaf_14853064860961301572.plus.aac.p.m4a"
+  },
+  {
+    "id":18,
+    "artistname":"Jeremy Zucker",
+    "songname":"Comethru",
+    "duration":"3:00",
+    "raitings":"4.1",
+    "image":"https://wallpapercave.com/wp/wp4259291.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/a2/e5/9a/a2e59a2e-d485-2c2b-a968-baa81f61c508/mzaf_5630330414784457112.plus.aac.p.m4a" 
+  },
+  {
+    "id":19,
+    "artistname":"Bruno Mars",
+    "songname":"The Lazy Song",
+    "duration":"3:19",
+    "raitings":"4.1",
+    "image":"https://wallpapercave.com/wp/wp9152356.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/fc/97/06/fc970689-4bae-9bbb-32a7-3b91a8bdb896/mzaf_7145624423213884384.plus.aac.p.m4a" 
+  },
+  {
+    "id":20,
+    "artistname":"Wiz Khalifia ft. Charlie Puth",
+    "songname":"See You Again",
+    "duration":"3:57",
+    "raitings":"4.1",
+     "image":"https://wallpapercave.com/wp/wp1830928.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ae/cd/98/aecd98b8-3149-7125-0f3b-d5d3565024ee/mzaf_3586092188460258172.plus.aac.p.m4a" 
+  },
+  {
+    "id":21,
+    "artistname":"Israel Kamakawiwoʻole",
+    "songname":"Somewhere Over The Rainbow",
+    "duration":"3:47",
+    "raitings":"4.1",
+    "image":"https://cache.desktopnexus.com/thumbseg/2384/2384571-bigthumbnail.jpg",
+    "songurl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/92/87/a8/9287a838-c8f6-51bc-2e7f-c39a0dd32feb/mzaf_6037630289299176882.plus.aac.p.m4a"
+  }
+ 
+ ]
