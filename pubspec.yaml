@@ -29,6 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  alan_voice: ^3.2.0
 
   audioplayers: ^0.20.1
   http:
@@ -62,9 +63,10 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   uses-material-design: true
+
+  
   assets:
-      - assets/img/
-      - assets/json/
+    - assets/
 
  
 

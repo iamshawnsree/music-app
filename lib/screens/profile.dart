@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
-import 'package:musicapp2/utils/user_preferences.dart';
 import 'package:musicapp2/screens/edit_profile_page.dart';
-import 'package:musicapp2/model/user.dart';
+import 'package:musicapp2/screens/home.dart';
 import 'package:musicapp2/widget/button_widget.dart';
 import 'package:musicapp2/widget/profile_widget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -15,9 +15,24 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
   @override
-  Widget build(BuildContext context) {
-    const user = UserPreferences.myUser;
+  void initState() {
+    super.initState();
+    detectUser();
+  }
 
+  final FirebaseAuth _auth1 = FirebaseAuth.instance;
+  void detectUser() async {
+    if (_auth1.currentUser == null) {
+      Navigator.push(context, MaterialPageRoute(builder: (_) => MyHomePage()));
+    }
+    //   //else {
+    //   //   Navigator.push(context, MaterialPageRoute(builder: (_) => const Profile()));
+    //   // }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final user = _auth1.currentUser!;
     return ThemeSwitchingArea(
       child: Builder(
         builder: (context) => Scaffold(
@@ -28,7 +43,8 @@ class _ProfileState extends State<Profile> {
             physics: const BouncingScrollPhysics(),
             children: [
               ProfileWidget(
-                imagePath: user.imagePath,
+                imagePath:
+                    'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=333&q=80',
                 onClicked: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => EditProfilePage()),
@@ -49,15 +65,17 @@ class _ProfileState extends State<Profile> {
     );
   }
 
+  /// other way there is no user logged.
+
   Widget buildName(User user) => Column(
         children: [
           Text(
-            user.name,
+            user.email.toString(),
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
           ),
           const SizedBox(height: 4),
           Text(
-            user.email,
+            user.email.toString(),
             style: TextStyle(color: Colors.grey),
           )
         ],
@@ -73,7 +91,7 @@ class _ProfileState extends State<Profile> {
           Text("Country"),
           const SizedBox(height: 6),
           Text(
-            user.country,
+            'nepal',
             style: TextStyle(color: Colors.grey),
           )
         ],
